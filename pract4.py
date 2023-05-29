@@ -34,7 +34,7 @@ from sklearn.preprocessing import StandardScaler
 scale = df['total_sqft'].values.reshape(-1, 1)
 
 scaler = StandardScaler()
-model = scaler.fit(scale)
+model = scaler.fit_transform(scale)
 scaled_data = model.transform(scale)
 
 
@@ -42,7 +42,8 @@ from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.preprocessing import StandardScaler
 std = StandardScaler()
 df2=df
-x= df2["persq"]
+x1= df.drop["price"]
+x= x1.drop['Location']
 y= df['price']
 
 x = std.fit_transform(x)
