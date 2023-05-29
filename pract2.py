@@ -9,9 +9,11 @@ from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 le = LabelEncoder()
 ohm = OneHotEncoder()
 df['GENDER'] = le.fit_transform(df['GENDER'])
+
 from sklearn.impute import SimpleImputer
 imputer = SimpleImputer(strategy='constant', fill_value='missing') 
 newdf.GENDER=imputer.fit_transform(newdf["GENDER"].values.reshape([-1,1]))[:,0]
+
 ohm = pd.get_dummies(df,columns=['PLACEMENT','EDUCATION_TYPE'])
 
 cat = df['Gender'].replace(['M','F'],[2,1])
