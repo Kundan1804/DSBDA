@@ -3,7 +3,6 @@ import pandas as pd
 import seaborn as sns
 df = pd.read_csv('Academic_Performance.csv')
 df.drop(['STUDENT_ID'],axis=1, inplace=True)
-df.drop(['STUDENT_ID'],axis=1, inplace=True)
 df.head()
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 le = LabelEncoder()
